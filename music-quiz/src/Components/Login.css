@@ -1,0 +1,86 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #3a0ca3, #7209b7, #4361ee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 800px;
+  height: 500px;
+  padding: 40px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+
+  backdrop-filter: blur(10px);
+
+  /* COMBINED background */
+  background: 
+    linear-gradient(rgba(58,12,163,0.6), rgba(114,9,183,0.3)),
+    url('/cardbg.png');
+
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+}
+
+.music-icon {
+    font-size: 28px; 
+    color: #b5179e;
+}
+
+
+.form {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+/* INPUT */
+.form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+.form input::placeholder {
+  color: #ddd;
+}
+
+/* BUTTON */
+.form button {
+  width: 40%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+
+  background: #560bad;
+  color: white;
+  font-weight: bold;
+  align-self: flex-start;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background: #480ca8;
+}
