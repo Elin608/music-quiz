@@ -24,6 +24,11 @@ function Login() {
                     Don't have an account? <span>Create</span>
                 </p>
             </div>
+
+            <div className="right-msg">
+                <h1>Welcome Back!</h1>
+                <p>Ready to test your music knowledge? Sign in and start the quiz!</p>
+            </div>
         </div>
     )
 }
