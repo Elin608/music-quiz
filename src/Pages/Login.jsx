@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaMusic } from "react-icons/fa";
 import "./Login.css";
 
@@ -56,9 +56,9 @@ function Login() {
                    <button onClick={handleLogin}>Login</button>
 
                    <p className="signup-text">
-                       Don't have an account?{""} 
+                       Don't have an account? {""} 
                        <span onClick={() => navigate("/register")}>
-                        Register here
+                         Create account
                        </span>
                    </p>
                 </div>
