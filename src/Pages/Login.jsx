@@ -16,7 +16,7 @@ function Login() {
             alert("Please fill all fields");
             return;
         }
-        
+
         const savedUsername = localStorage.getItem("username");
         const savedPassword = localStorage.getItem("password");
 
@@ -52,10 +52,6 @@ function Login() {
                    />
                 
                    <div className="options">
-                      <label className="remember">
-                          <input type="checkbox" />
-                          <span>Remember me</span>
-                      </label>
                       <a onClick={() => navigate("/forgot-password")}>
                         Forgot password?
                       </a>
