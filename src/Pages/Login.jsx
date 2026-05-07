@@ -11,6 +11,12 @@ function Login() {
     const [password, setPassword] = useState("");
     
     const handleLogin = () => {
+
+        if (!username || !password) {
+            alert("Please fill all fields");
+            return;
+        }
+        
         const savedUsername = localStorage.getItem("username");
         const savedPassword = localStorage.getItem("password");
 
@@ -50,7 +56,9 @@ function Login() {
                           <input type="checkbox" />
                           <span>Remember me</span>
                       </label>
-                      <a href="#">Forgot password?</a>
+                      <a onClick={() => navigate("/forgot-password")}>
+                        Forgot password?
+                      </a>
                    </div>
 
                    <button onClick={handleLogin}>Login</button>

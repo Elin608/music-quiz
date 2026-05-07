@@ -12,6 +12,11 @@ function Register() {
 
     const handleRegister = () => {
 
+        if (!username || !password || !email) {
+            alert("Please fill all fields");
+            return;
+        }
+
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
         localStorage.setItem("email", email);
@@ -32,6 +37,7 @@ function Register() {
                 placeholder="Username..."
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                required
                 />
 
                 <input 
@@ -39,6 +45,7 @@ function Register() {
                 placeholder="Email..."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                required
                 />
 
                 <input 
@@ -46,6 +53,7 @@ function Register() {
                 placeholder="Password..."
                 value={password}
                 onChange={(e) => setPassword(e.target.value)} 
+                required
                 />
 
                 <button onClick={handleRegister}>
