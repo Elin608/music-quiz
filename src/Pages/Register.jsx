@@ -17,6 +17,11 @@ function Register() {
             return;
         }
 
+        if (password.length < 8) {
+            alert("Password must be at least 8 characters");
+            return;
+        }
+
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
         localStorage.setItem("email", email);
