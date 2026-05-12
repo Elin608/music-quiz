@@ -25,6 +25,7 @@ function Login() {
             password === savedPassword 
         ) {
             alert("Login successful");
+            navigate("quiz");
         } else {
             alert("Invalid username or password");
         }
