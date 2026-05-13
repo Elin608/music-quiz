@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
-      <Route path="/quiz" element={<Quiz />} />
+      <Route path="/quiz" element ={<Quiz/>} />
     </Routes>
     </BrowserRouter>
   );
