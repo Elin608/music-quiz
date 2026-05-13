@@ -78,6 +78,12 @@
     color: #ffffff;
 }
 
+.password-note {
+  margin-top: -15px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
 /* BUTTON */
 .form button {
   display: block;
@@ -173,6 +179,6 @@
   }
 
   .form button {
-    width: 100%;
+    width: 70%;
   }
 }
