@@ -1,0 +1,13 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #3a0ca3, #7209b7, #4361ee);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
