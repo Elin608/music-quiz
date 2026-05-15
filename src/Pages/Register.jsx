@@ -46,18 +46,22 @@ function Register() {
                 />
 
                 <input 
-                type="email" 
-                placeholder="Email..."
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                />
-
-                <input 
                 type="password"
                 placeholder="Password..."
                 value={password}
                 onChange={(e) => setPassword(e.target.value)} 
+                required
+                />
+
+                <p className="password-note">
+                    Password must be at least 8 characters.
+                </p>
+
+                <input 
+                type="email" 
+                placeholder="Email..."
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 />
 
