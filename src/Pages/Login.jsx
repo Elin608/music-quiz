@@ -9,7 +9,7 @@ function Login() {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    
+
     const handleLogin = () => {
 
         if (!username || !password) {
@@ -22,7 +22,7 @@ function Login() {
 
         if (
             username === savedUsername &&
-            password === savedPassword 
+            password === savedPassword
         ) {
             alert("Login successful");
             navigate("quiz");
@@ -35,43 +35,43 @@ function Login() {
         <div className="card">
             <h2><FaMusic className="music-icon" /> Song Quiz</h2>
 
-                <p>Login to Continue</p>
-                
-                <div className="form">
-                   <input 
-                   type="text" 
-                   placeholder="Username..." 
-                   value={username}
-                   onChange={(e) => setUsername(e.target.value)}
-                   />
+            <p>Login to Continue</p>
 
-                   <input 
-                   type="password" 
-                   placeholder="Password..." 
-                   value={password}
-                   onChange={(e) => setPassword(e.target.value)}
-                   />
-                
-                   <div className="options">
-                      <a onClick={() => navigate("/forgot-password")}>
+            <div className="form">
+                <input
+                    type="text"
+                    placeholder="Username..."
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+
+                <input
+                    type="password"
+                    placeholder="Password..."
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+
+                <div className="options">
+                    <a onClick={() => navigate("/forgot-password")}>
                         Forgot password?
-                      </a>
-                   </div>
-
-                   <button onClick={handleLogin}>Login</button>
-
-                   <p className="signup-text">
-                       Don't have an account? {""} 
-                       <span onClick={() => navigate("/register")}>
-                         Create account
-                       </span>
-                   </p>
+                    </a>
                 </div>
 
-                <div className="right-msg">
-                    <h1>Welcome Back!</h1>
-                    <p>Ready to test your music knowledge? Sign in and start the quiz!</p>
-                </div>
+                <button onClick={handleLogin}>Login</button>
+
+                <p className="signup-text">
+                    Don't have an account? {""}
+                    <span onClick={() => navigate("/register")}>
+                        Create account
+                    </span>
+                </p>
+            </div>
+
+            <div className="right-msg">
+                <h1>Welcome Back!</h1>
+                <p>Ready to test your music knowledge? Sign in and start the quiz!</p>
+            </div>
         </div>
     )
 

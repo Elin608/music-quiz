@@ -1,13 +1,18 @@
 
 import quizQuestions from "../assets/questions.js";
 import { useState } from "react";
-
+import "./Quiz.css";
 let audio;
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] =
         useState(0);
 
     const [message, setMessage] = useState("");
+
+
+    const [score, setScore] =
+        useState(0);
+    const [isFinished, setIsFinished] = useState(false);
 
 
     const playSong = () => {
@@ -32,56 +37,59 @@ function Quiz() {
         }
     };
 
+
+
+    if (isFinished) {
+
+
+
+        return (
+            <div clasName="quiz-card">
+                <h1>Quiz Finished!</h1>
+
+
+                <p>Your final score is: {score}</p>
+            </div>
+        );
+    }
+
     return (
-        <div>
-            <h1>Music Quiz</h1>
+        <div className="quiz-card">
+            <h1>🎵 Music Quiz</h1>
             <h2>{quizQuestions[currentQuestion].question}</h2>
+            <p>Question {currentQuestion + 1} / {quizQuestions.length}</p>
 
-            <button onClick={playSong}>
-                Play song
-            </button>
+            <p>Score: {score}</p>
 
-            <button onClick={stopSong}>
-                Stop song
-            </button>
+            <button onClick={playSong}
+            >Play song</button>
 
-            {quizQuestions[currentQuestion].options.map((option, index) => (
+            <button onClick={stopSong}>Stop song</button>
 
+            <div className="quiz-options">
+                {quizQuestions[currentQuestion].options.map((option, index) => (
+                    <button key={index}
+                        onClick={() => {
+                            if (option === quizQuestions[currentQuestion].correctAnswer) {
+                                setMessage("Correct!");
+                                setScore(score + 1);
+                            } else {
+                                setMessage("Wrong answer");
+                            }
+                            if (currentQuestion < quizQuestions.length - 1) {
+                                setCurrentQuestion(currentQuestion + 1);
+                            } else {
+                                setIsFinished(true);
+                            }
+                        }}
 
-
-
-                <button
-                    key={index}
-                    onClick={() => {
-                        if (option ===
-                            quizQuestions[currentQuestion].correctAnswer) {
-                            setMessage("Correct!");
-                        } else {
-                            setMessage("Wrong answer")
-                        }
-
-                        if (currentQuestion <
-                            quizQuestions.length - 1) {
-
-                            setCurrentQuestion(currentQuestion + 1);
-                        } else {
-                            setMessage("Quiz finished!");
-                        }
-                    }}
                     >
-
-
-
-
-
-                    {option}
-                </button>
-    ))
-}
-<p>{message}</p>
-
-        </div >
+                        {option}
+                    </button>
+                ))}
+            </div>
+            <p>{message}</p>
+        </div>
     );
 }
 export default Quiz;
-
